@@ -60,7 +60,7 @@ namespace panogen
             services.AddTransient<ISmsSender, AuthMessageSender>();
             
             // Add Glimpse for debugging
-            services.AddGlimpse();
+            // services.AddGlimpse();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -73,7 +73,7 @@ namespace panogen
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
-                app.UseGlimpse();
+                // app.UseGlimpse();
             }
             else
             {
