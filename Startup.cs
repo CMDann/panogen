@@ -42,7 +42,6 @@ namespace panogen
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddGlimpse();
             
             // Add framework services.
             services.AddEntityFramework()
@@ -59,6 +58,9 @@ namespace panogen
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+            
+            // Add Glimpse for debugging
+            services.AddGlimpse();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
