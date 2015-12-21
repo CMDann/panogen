@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using panogen.Models;
 using panogen.Services;
+using Glimpse;
 
 namespace panogen
 {
@@ -41,6 +42,8 @@ namespace panogen
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddGlimpse();
+            
             // Add framework services.
             services.AddEntityFramework()
                 .AddSqlite()
@@ -68,6 +71,7 @@ namespace panogen
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+                app.UseGlimpse();
             }
             else
             {
